@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import "./Hero-section.css"; // CSS normal, no module
+import "./Hero-section.css"; 
 
 export default function Hero() {
   return (
     <section className="hero">
       <video
         className="video"
-        src="/video/Video Casa en Venta Moderno Negro y Amarillo.mp4"
+        src="/video/video.mp4"
         autoPlay
         muted
         loop
@@ -14,18 +14,8 @@ export default function Hero() {
       />
 
       <div className="content">
-        <h1 className="title">Welcome</h1>
-        <h2 className="subtitle">Find your dream house</h2>
-
-        <div className="buttonGroup">
-          <Link to="/login" className="btnSecondary">
-            LOGIN
-          </Link>
-
-          <Link to="/register" className="btnSecondary">
-            REGISTER
-          </Link>
-        </div>
+        <h1 className="title">Welcome to Our Real Estate Platform</h1>
+        <h2 className="subtitle">Find your dream home</h2>
       </div>
     </section>
   );

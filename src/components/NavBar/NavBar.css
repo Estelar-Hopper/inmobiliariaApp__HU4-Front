@@ -1,0 +1,49 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+
+  background: transparent; /* importante */
+}
+
+.navbar-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-btn {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+
+  border: none;                /* Quita bordes */
+  background: transparent;     /* Quita fondo */
+  font-weight: 500;
+
+  transition: 0.2s ease;
+}
+
+.navbar-btn:hover {
+  text-decoration: underline;  /* efecto elegante */
+}
