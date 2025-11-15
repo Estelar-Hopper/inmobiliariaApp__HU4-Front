@@ -1,3 +1,4 @@
+//vista del register
 function Register() {
   return (
     <>

@@ -1,10 +1,13 @@
 import Hero from "../../components/Home/Hero-section/HeroSection";
 import "./home.css";
+import NavBar from "../../components/NavBar/NavBar"
 
+// esta es la vista principal de la app
 export default function Home() {
   return (
     <>
       <Hero />
+      <NavBar/>
 
     
       <section className="cards-section">

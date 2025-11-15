@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://api.miempresa.com/api/auth/'; // Cambia esto por la URL del nuestro back desplegado 
+const API_URL = ''; // Añade la URL de  nuestro back desplegado 
 
 export const login = async (credentials) => {
   try {
