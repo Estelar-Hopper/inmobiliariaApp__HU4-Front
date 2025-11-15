@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Buttons.css";
 
+// componente para usar botones personalizados en la app se pude cambiar su contenido 
 export default function Buttons() {
   return (
     <div className="buttonGroup">

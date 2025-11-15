@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="navbar-content">
 
         <Link to="/" className="navbar-logo">
-          Home
+          
         </Link>
 
         <div className="navbar-right">

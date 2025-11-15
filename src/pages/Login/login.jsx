@@ -1,5 +1,6 @@
 import "./login.css"; // importante: importar tu hoja de estilos
 
+//vista del login 
 function Login() {
   return (
     <div className="login-container">

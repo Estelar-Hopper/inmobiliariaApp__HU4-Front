@@ -1,19 +1,30 @@
+// src/AppRouter.jsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
-import CreateProperty from "../pages/CreateProperty/CreateProperty"
+import Home from "../pages/Home/Home";
+
+// Pages de propiedades
+import PropertyListPage from "../pages/PropertyListPage/PropertyListPage";
+import CreatePropertyPage from "../pages/CreatePropertyPage/CreatePropertyPage";
+import EditPropertyPage from "../pages/EditPropertyPage/EditPropertyPage";
 
 function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        {/* Página principal / Home */}
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+
+        {/* Autenticación */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/home" element={<Home/>} />
-         <Route path="/create-property" element={<CreateProperty />} />
 
+        {/* CRUD de propiedades */}
+        <Route path="/properties" element={<PropertyListPage />} />           {/* Listado */}
+        <Route path="/properties/create" element={<CreatePropertyPage />} />  {/* Crear */}
+        <Route path="/properties/edit/:id" element={<EditPropertyPage />} />  {/* Editar */}
       </Routes>
     </BrowserRouter>
   );
