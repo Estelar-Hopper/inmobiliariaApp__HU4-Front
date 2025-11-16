@@ -1,15 +1,15 @@
-/* CONTENEDOR PRINCIPAL DEL HERO */
+/* ===== HERO SECTION ===== */
 .hero {
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 90vh; /* Ajustable */
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
 
-/* VIDEO DE FONDO */
+/* ===== VIDEO DE FONDO ===== */
 .video {
   position: absolute;
   top: 0;
@@ -17,10 +17,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1; /* detrás de todo */
+  z-index: -2;
+
+  /* Previene el "salto" de posición al cargar */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
-/* OVERLAY (encima del video, debajo del texto) */
+/* ===== OVERLAY ===== */
 .hero::after {
   content: "";
   position: absolute;
@@ -32,27 +36,18 @@
     rgba(0, 0, 0, 0.55),
     rgba(0, 0, 0, 0.25)
   );
-  z-index: 2;
+  z-index: -1;
 }
 
+/* ===== CONTENIDO ===== */
 .content {
-  position: relative;        /* Asegura que no dependa del video */
   width: 100%;
   max-width: 1200px;
-  
   padding: 0 40px;
   text-align: center;
   color: #fff;
   user-select: none;
-
-  display: flex;             /* Esto centra el texto sin saltos */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  transform: translateZ(0);  /* Evita parpadeo o movimiento inicial */
 }
-
 
 /* TÍTULO */
 .title {
@@ -69,7 +64,7 @@
   margin-bottom: 25px;
 }
 
-/* CONTENEDOR DE BOTONES */
+/* BOTONERA */
 .buttonGroup {
   display: flex;
   justify-content: center;
@@ -77,7 +72,6 @@
   flex-wrap: wrap;
 }
 
-/* BOTONES */
 .btnSecondary {
   background-color: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -94,7 +88,7 @@
   transform: translateY(-3px);
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
   .title {
     letter-spacing: 1px;
@@ -104,17 +98,5 @@
   }
   .content {
     padding: 0 20px;
-  }
-}
-
-/* ANIMACIÓN */
-@keyframes fadeInHero {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
