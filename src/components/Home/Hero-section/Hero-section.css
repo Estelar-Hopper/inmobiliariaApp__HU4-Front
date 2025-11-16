@@ -35,18 +35,24 @@
   z-index: 2;
 }
 
-/* CONTENIDO (TEXTO SOBRE EL VIDEO) */
 .content {
-  position: relative;
-  z-index: 3; /* MUY IMPORTANTE: texto encima del overlay */
+  position: relative;        /* Asegura que no dependa del video */
   width: 100%;
   max-width: 1200px;
+  
   padding: 0 40px;
   text-align: center;
   color: #fff;
   user-select: none;
-  animation: fadeInHero 1.2s ease-in-out;
+
+  display: flex;             /* Esto centra el texto sin saltos */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transform: translateZ(0);  /* Evita parpadeo o movimiento inicial */
 }
+
 
 /* TÍTULO */
 .title {
