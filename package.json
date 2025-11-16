@@ -6,12 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start": "serve -s dist -l $PORT",
+    "start": "serve -s dist -l 3000",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "axios": "^1.13.2",
+    "ci": "^2.3.0",
     "framer-motion": "^12.23.24",
     "react": "^19.2.0",
     "react-router-dom": "^7.9.6"
