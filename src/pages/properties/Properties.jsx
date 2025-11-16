@@ -8,7 +8,7 @@ import {
   createProperty, 
   updateProperty, 
   deleteProperty 
-} from '../../services/propertyService';
+} from '../../services/PropertyService';
 import './Properties.css';
 
 const Properties = () => {
