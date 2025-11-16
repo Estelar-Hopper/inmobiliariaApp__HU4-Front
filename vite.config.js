@@ -4,7 +4,13 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   preview: {
+    host: true,
     port: process.env.PORT || 4173,
+    allowedHosts: [
+      "inmobiliariaapphu4-front-production.up.railway.app"
+    ]
+  },
+  server: {
     host: true
   }
 });
