@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home/home.jsx";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
-import Properties from "./pages/Properties/Properties"; // 👈 IMPORTAR
+import Properties from "./pages/Properties/Properties"; 
 
 function App() {
   return (
