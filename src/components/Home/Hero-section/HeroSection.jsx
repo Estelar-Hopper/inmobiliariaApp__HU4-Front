@@ -16,6 +16,9 @@ export default function Hero() {
       <div className="content">
         <h1 className="title">Welcome to Our Real Estate Platform</h1>
         <h2 className="subtitle">Find your dream home</h2>
+        <Link to="/ViewProperties" className="hero-btn">
+          View Properties
+        </Link>
       </div>
     </section>
   );

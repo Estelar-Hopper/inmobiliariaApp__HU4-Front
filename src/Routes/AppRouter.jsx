@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Home from "../pages/Home/Home";
+//import ViewProperties from "../pages/ViewProperties/ViewProperties"
 
 // Pages de propiedades
 import PropertyListPage from "../pages/PropertyListPage/PropertyListPage";
@@ -16,6 +17,7 @@ function AppRouter() {
         {/* Página principal / Home */}
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        
 
         {/* Autenticación */}
         <Route path="/login" element={<Login />} />

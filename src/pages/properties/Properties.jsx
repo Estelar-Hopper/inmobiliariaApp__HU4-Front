@@ -1,103 +1,101 @@
 // src/pages/Properties/Properties.jsx
 
-import { useState, useEffect } from 'react';
-import PropertyCard from '../../components/PropertyCard';
-import PropertyForm from '../../components/PropertyForm';
-import { 
-  getAllProperties, 
-  createProperty, 
-  updateProperty, 
-  deleteProperty 
-} from '../../services/PropertyService';
-import './Properties.css';
+import { useState, useEffect } from "react";
+import PropertyCard from "../../components/PropertyCard";
+import PropertyForm from "../../components/PropertyForm";
+
+import {
+  getAllProperties,
+  createProperty,
+  updateProperty,
+  deleteProperty,
+} from "../../services/PropertyService";
+
+import "./Properties.css";
 
 const Properties = () => {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [editingProperty, setEditingProperty] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
-  // Cargar propiedades al montar el componente
+  // Cargar propiedades al montar
   useEffect(() => {
     loadProperties();
   }, []);
 
-  // Función para cargar todas las propiedades
   const loadProperties = async () => {
     try {
       setLoading(true);
-      setError('');
+      setError("");
       const data = await getAllProperties();
       setProperties(data);
     } catch (err) {
-      setError('Error al cargar las propiedades');
+      setError("Error al cargar las propiedades");
       console.error(err);
     } finally {
       setLoading(false);
     }
   };
 
-  // Manejar creación de propiedad
+  // Crear propiedad
   const handleCreate = async (formData) => {
     try {
-      setError('');
+      setError("");
       await createProperty(formData);
       setShowForm(false);
-      loadProperties(); // Recargar la lista
-      alert(' Propiedad creada exitosamente');
+      loadProperties();
+      alert("Propiedad creada exitosamente");
     } catch (err) {
-      setError('Error al crear la propiedad');
-      alert(' Error al crear la propiedad');
+      setError("Error al crear la propiedad");
+      alert("Error al crear la propiedad");
       console.error(err);
     }
   };
 
-  // Manejar actualización de propiedad
+  // Actualizar propiedad
   const handleUpdate = async (formData) => {
     try {
-      setError('');
+      setError("");
       await updateProperty(editingProperty.id, formData);
       setShowForm(false);
       setEditingProperty(null);
-      loadProperties(); // Recargar la lista
-      alert(' Propiedad actualizada exitosamente');
+      loadProperties();
+      alert("Propiedad actualizada exitosamente");
     } catch (err) {
-      setError('Error al actualizar la propiedad');
-      alert(' Error al actualizar la propiedad');
+      setError("Error al actualizar la propiedad");
+      alert("Error al actualizar la propiedad");
       console.error(err);
     }
   };
 
-  // Manejar eliminación de propiedad
+  // Eliminar propiedad
   const handleDelete = async (id) => {
-    if (window.confirm('¿Estás seguro de eliminar esta propiedad?')) {
+    if (window.confirm("¿Estás seguro de eliminar esta propiedad?")) {
       try {
-        setError('');
+        setError("");
         await deleteProperty(id);
-        loadProperties(); // Recargar la lista
-        alert(' Propiedad eliminada exitosamente');
+        loadProperties();
+        alert("Propiedad eliminada exitosamente");
       } catch (err) {
-        setError('Error al eliminar la propiedad');
-        alert(' Error al eliminar la propiedad');
+        setError("Error al eliminar la propiedad");
+        alert("Error al eliminar la propiedad");
         console.error(err);
       }
     }
   };
 
-  // Abrir formulario para editar
   const handleEdit = (property) => {
     setEditingProperty(property);
     setShowForm(true);
   };
 
-  // Cerrar formulario
   const handleCloseForm = () => {
     setShowForm(false);
     setEditingProperty(null);
   };
 
-  // Manejar envío del formulario (crear o actualizar)
   const handleFormSubmit = (formData) => {
     if (editingProperty) {
       handleUpdate(formData);
@@ -107,37 +105,36 @@ const Properties = () => {
   };
 
   return (
-    <div className="properties-page">
-      <div className="properties-header">
-        <h1> Gestión de Propiedades</h1>
+    <div className="prop-page">
+      <div className="prop-header">
+        <h1>Gestión de Propiedades</h1>
         <button 
           onClick={() => setShowForm(true)} 
-          className="btn-new-property"
+          className="prop-btn-new"
         >
-           Nueva Propiedad
+          Nueva Propiedad
         </button>
       </div>
 
-      {error && (
-        <div className="error-message">
-           {error}
-        </div>
-      )}
+      {error && <div className="prop-error">{error}</div>}
 
       {loading ? (
-        <div className="loading">
-          <div className="spinner"></div>
+        <div className="prop-loading">
+          <div className="prop-spinner"></div>
           <p>Cargando propiedades...</p>
         </div>
       ) : properties.length === 0 ? (
-        <div className="empty-state">
-          <p>📭 No hay propiedades registradas</p>
-          <button onClick={() => setShowForm(true)} className="btn-create-first">
+        <div className="prop-empty">
+          <p>No hay propiedades registradas</p>
+          <button 
+            onClick={() => setShowForm(true)} 
+            className="prop-btn-first"
+          >
             Crear primera propiedad
           </button>
         </div>
       ) : (
-        <div className="properties-grid">
+        <div className="prop-grid">
           {properties.map((property) => (
             <PropertyCard
               key={property.id}
