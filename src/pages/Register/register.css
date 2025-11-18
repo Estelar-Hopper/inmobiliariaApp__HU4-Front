@@ -1,0 +1,231 @@
+/* src/pages/Register/register.css */
+
+/* Importar fuente premium (opcional, usa Google Fonts o similar) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+
+/* Contenedor principal: Fondo lujoso con gradiente y efecto de vidrio */
+.auth-container {
+    max-width: 450px;
+    margin: 80px auto;
+    padding: 40px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%); /* Gradiente oscuro elegante */
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.2);
+    text-align: center;
+    backdrop-filter: blur(15px); /* Efecto de vidrio para lujo */
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Efecto de fondo animado (partículas doradas sutiles) */
+.auth-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(192, 192, 192, 0.1) 0%, transparent 50%);
+    animation: float 8s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Título: Dorado, con sombra y fuente serif para exclusividad */
+.auth-container h2 {
+    margin-bottom: 30px;
+    color: #ffd700; /* Dorado brillante */
+    font-family: 'Playfair Display', serif; /* Fuente elegante */
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+    100% { text-shadow: 0 0 30px rgba(255, 215, 0, 1); }
+}
+
+/* Formulario: Animación de entrada */
+.register-form {
+    animation: slideIn 0.6s ease-out 0.2s both;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Grupos de formulario: Diseño premium */
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Wrapper de input con icono */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    color: #ffd700;
+    font-size: 1.2rem;
+    z-index: 1;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px 15px 15px 45px; /* Espacio para el icono */
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 10px;
+    background: linear-gradient(135deg, #222, #333);
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-group input:focus {
+    border-color: #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    outline: none;
+    transform: scale(1.02);
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+/* Botón: Diseño épico con gradientes y efectos */
+.btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(255, 215, 0, 0.4);
+    filter: brightness(1.2);
+}
+
+/* Enlace: Estilo premium */
+.btn-link {
+    background: none;
+    color: #ffd700;
+    padding: 0;
+    margin-top: 25px;
+    text-align: center;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.btn-link a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-link a:hover {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+/* Mensajes: Diseño premium con animaciones */
+.message-error, .message-success {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.message-error {
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    color: white;
+    border-color: #ff5722;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.message-success {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+    color: white;
+    border-color: #28a745;
+}
+
+/* Responsividad: Para móviles */
+@media (max-width: 768px) {
+    .auth-container {
+        margin: 40px 20px;
+        padding: 30px 20px;
+    }
+
+    .auth-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .form-group input {
+        padding: 12px 12px 12px 40px;
+    }
+
+    .input-icon {
+        left: 12px;
+    }
+}
