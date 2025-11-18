@@ -23,7 +23,7 @@ export async function createProperty(data) {
 
   if (!res.ok) throw new Error("Error creating property");
 
-  // ✔️ Por si el backend no retorna JSON
+  // Por si el backend no retorna JSON
   const text = await res.text();
   return text ? JSON.parse(text) : null;
 }
@@ -49,6 +49,6 @@ export async function deleteProperty(id) {
 
   if (!res.ok) throw new Error("Error deleting property");
 
-  // ✔️ DELETE normalmente devuelve 204 No Content
+  //  DELETE normalmente devuelve 204 No Content
   return null;
 }
