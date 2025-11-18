@@ -1,16 +1,92 @@
-# React + Vite
+# Real Estate App – Frontend (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is the **frontend** for the deployed backend API of the Real Estate Application:  
+ **Backend API:** https://inmobiliaria-app-hu4-598dd1cade22.herokuapp.com/index.html  
+The frontend consumes the API (currently the *Property* endpoints) and provides a user interface for viewing and managing real estate properties.
 
-Currently, two official plugins are available:
+The application includes a **Home page**, a **Property listing view**, and a full **CRUD system for properties** connected to the backend.  
+It is built with **React + Vite** and deployed on Railway.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+##  Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Frontend deployed on Railway:  
+ **https://inmobiliariaapphu4-front-production.up.railway.app/**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Project Repository
+
+You can clone the project from GitHub:  https://github.com/Estelar-Hopper/inmobiliariaApp__HU4-Front.git
+
+
+---
+
+##  Project Description
+
+The Real Estate App Frontend allows users to:
+
+- View all available properties fetched from the backend.
+- Create new properties (including image upload via Cloudinary).
+- Edit existing properties.
+- Delete properties.
+- Navigate between Home and Property Views using React Router DOM.
+
+This frontend is connected to a backend deployed on Heroku and currently consumes only the **Property** endpoints.
+
+---
+
+##  Technologies Used
+
+- **React** (with Vite)
+- **React Router DOM**
+- **Fetch API**
+- **Custom CSS**
+- **Cloudinary** (via backend)
+- **Railway** for deployment
+
+---
+
+##  Backend API
+
+The backend is already deployed and provides RESTful endpoints for property management:
+
+ **API Docs / Swagger UI:**  
+https://inmobiliaria-app-hu4-598dd1cade22.herokuapp.com/index.html
+
+The frontend currently consumes:
+
+- `GET /properties`
+- `POST /properties`
+- `PUT /properties/{id}`
+- `DELETE /properties/{id}`
+
+---
+##  Installation & Setup
+
+If you clone the project locally, follow these steps:
+
+### 1 Clone the repository
+
+```bash
+git clone https://github.com/Estelar-Hopper/inmobiliariaApp__HU4-Front.git
+```
+### 2 Install dependencies 
+
+```bash
+npm install
+```
+### 3 Run the develoment server 
+
+```bash
+npm run dev
+```
+
+### The app will start at: 
+http://localhost:5173
+
+
+
+
+
